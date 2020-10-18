@@ -4,4 +4,4 @@ bases:
   - https://github.com/jasonblanchard/k8s-pipeline-testing-notebook/deploy/edge?ref=bf65dd297e6b29737645a2c2776197a31874e326
 images:
   - name: jasonblanchard/k8s-pipeline-notebook
-    newTag: "1"
+    newTag: "2"
