@@ -6,5 +6,5 @@ bases:
 images:
 - name: jasonblanchard/k8s-pipeline-notebook
   newTag: "bf65dd297e6b29737645a2c2776197a31874e326" # {"$openapi":"version"}
-commonLabels:
+commonAnnotations:
   version: "bf65dd297e6b29737645a2c2776197a31874e326" # {"$openapi":"version"}
