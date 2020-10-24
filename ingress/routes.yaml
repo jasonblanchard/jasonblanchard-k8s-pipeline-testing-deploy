@@ -11,6 +11,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-\            name: notebook-edge
+            name: notebook-edge
             port:
               number: 8000
