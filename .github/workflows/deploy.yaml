@@ -11,5 +11,7 @@ jobs:
         run: kustomize cfg set notebook/edge version 123
       - name: commit changes
         run: |
+          git config --global user.name 'Jason Blanchard'
+          git config --global user.email 'jas.blanchard@gmail.com'
           git commit -am "deploying notebook to version __"
           git push origin main
