@@ -1,0 +1,15 @@
+name: deploy
+on: repository_dispatch
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: install kustomize
+        run: curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | bash
+      - name: update service version
+        run: kustomize cfg set nodebook/edge version 123
+      - name: commit changes
+        run: |
+          git commit -am "deploying notebook to version __"
+          git push origin main
