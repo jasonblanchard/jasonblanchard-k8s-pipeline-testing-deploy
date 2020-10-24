@@ -8,7 +8,7 @@ jobs:
       - name: install kustomize
         run: curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | bash
       - name: update service version
-        run: kustomize cfg set nodebook/edge version 123
+        run: kustomize cfg set notebook/edge version 123
       - name: commit changes
         run: |
           git commit -am "deploying notebook to version __"
