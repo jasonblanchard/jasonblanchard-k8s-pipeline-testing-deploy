@@ -2,9 +2,9 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: edge
 bases:
-- https://github.com/jasonblanchard/k8s-pipeline-testing-notebook/deploy/edge?ref=3a50aedf469a6bcc8b847fac3e002b88b281afd7 # {"$openapi":"base"}
+- https://github.com/jasonblanchard/k8s-pipeline-testing-notebook/deploy/edge?ref=d0985a87d288cc4e6ca43ee96adb931d00ebcb80 # {"$openapi":"base"}
 images:
 - name: jasonblanchard/k8s-pipeline-notebook
-  newTag: "3a50aedf469a6bcc8b847fac3e002b88b281afd7" # {"$openapi":"version"}
+  newTag: "d0985a87d288cc4e6ca43ee96adb931d00ebcb80" # {"$openapi":"version"}
 commonAnnotations:
-  version: "3a50aedf469a6bcc8b847fac3e002b88b281afd7" # {"$openapi":"version"}
+  version: "d0985a87d288cc4e6ca43ee96adb931d00ebcb80" # {"$openapi":"version"}
