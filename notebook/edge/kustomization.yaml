@@ -8,3 +8,5 @@ images:
   newTag: "d0985a87d288cc4e6ca43ee96adb931d00ebcb80" # {"$openapi":"version"}
 commonAnnotations:
   version: "d0985a87d288cc4e6ca43ee96adb931d00ebcb80" # {"$openapi":"version"}
+resoures:
+  - after.yaml
