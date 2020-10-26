@@ -1,0 +1,19 @@
+apiVersion: config.k8s.io/v1alpha1
+kind: Krmfile
+openAPI:
+  definitions:
+    io.k8s.cli.setters.version:
+      type: string
+      x-k8s-cli:
+        setter:
+          name: version
+          value: "b8dc43b5cd919334a2498387650beaa6ace29486"
+          isSet: true
+    io.k8s.cli.substitutions.base:
+      x-k8s-cli:
+        substitution:
+          name: base
+          pattern: https://github.com/jasonblanchard/k8s-pipeline-testing-notebook/deploy/edge?ref=${version}
+          values:
+          - marker: ${version}
+            ref: '#/definitions/io.k8s.cli.setters.version'

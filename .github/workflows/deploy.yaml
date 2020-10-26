@@ -8,7 +8,7 @@ jobs:
       - name: install kustomize
         run: curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | bash
       - name: update service version
-        run: kustomize cfg set notebook/edge version ${{ github.event.client_payload.version }}
+        run: kustomize cfg set services/notebook/edge version ${{ github.event.client_payload.version }} # TODO: Make service path configurable, get from payload
       - name: commit changes
         run: |
           git config --global user.name 'Jason Blanchard'

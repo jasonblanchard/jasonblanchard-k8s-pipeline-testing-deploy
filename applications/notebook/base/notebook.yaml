@@ -1,15 +1,12 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: notebook-edge
-  namespace: argocd
+  name: notebook
 spec:
   project: default
   source:
     repoURL: https://github.com/jasonblanchard/k8s-pipeline-testing-deploy
-    path: notebook/edge
   destination:
     server: https://kubernetes.default.svc
-    namespace: edge
   syncPolicy:
     automated: {}
