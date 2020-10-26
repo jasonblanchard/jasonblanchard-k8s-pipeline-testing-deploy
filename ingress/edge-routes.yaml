@@ -3,11 +3,13 @@ kind: Ingress
 metadata:
   name: edge-ingress
   namespace: edge
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
 spec:
   rules:
   - http:
       paths:
-      - path: /
+      - path: /edge(/|$)(.*)
         pathType: Prefix
         backend:
           service:
