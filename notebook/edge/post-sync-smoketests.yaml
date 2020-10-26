@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: notebook-smoketests-edge-
+  generateName: notebook-smoketests-edge-
   annotations:
     argocd.argoproj.io/hook: PostSync
     argocd.argoproj.io/hook-delete-policy: HookSucceeded
@@ -12,6 +12,7 @@ spec:
       containers:
       - name: sleep
         image: alpine:latest
-        command: ["grep", "asdf"]
+        # command: ["grep", "asdf"]
+        command: ["sleep", "10"]
       restartPolicy: Never
   backoffLimit: 0
