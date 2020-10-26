@@ -13,5 +13,5 @@ jobs:
         run: |
           git config --global user.name 'Jason Blanchard'
           git config --global user.email 'jas.blanchard@gmail.com'
-          git commit -am "deploying notebook to version ${{ github.event.client_payload.version }}"
+          git commit -am "deploying ${{ github.event.client_payload.service }} ${{ github.event.client_payload.environment }} to version ${{ github.event.client_payload.version }}"
           git push origin main
