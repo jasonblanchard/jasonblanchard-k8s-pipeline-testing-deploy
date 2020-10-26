@@ -12,6 +12,6 @@ spec:
       containers:
       - name: sleep
         image: alpine:latest
-        command: ["exit", "0"]
+        command: ["grep", "asdf"]
       restartPolicy: Never
   backoffLimit: 0
