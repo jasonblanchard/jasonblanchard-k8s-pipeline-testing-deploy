@@ -9,4 +9,5 @@ images:
 commonAnnotations:
   version: "f5d402f4ad8a80d7a607876d6e471318f6a22698" # {"$openapi":"version"}
 resources:
-- after.yaml
+  - post-sync-smoketests.yaml
+  - post-sync-final.yaml
