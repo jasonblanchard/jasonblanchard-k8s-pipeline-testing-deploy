@@ -13,6 +13,6 @@ spec:
       - name: sleep
         image: alpine:latest
         # command: ["grep", "asdf"]
-        command: ["sleep", "10"]
+        command: ["grep", "asdf"]
       restartPolicy: Never
   backoffLimit: 0
