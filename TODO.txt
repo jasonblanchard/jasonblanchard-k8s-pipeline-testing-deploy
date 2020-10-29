@@ -1,4 +1,0 @@
-- Implement promote job
-- How to block deploys - use a DENY sync window
-- How to run migrations - add as pre/post sync job? Or decouple from deploys? If latter, converges on -
-- How to run one-off jobs
