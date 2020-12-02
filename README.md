@@ -2,6 +2,13 @@
 
 ## Bootstrapping the cluster
 
+0. Install istio:
+
+```
+brew install istioctl
+istioctl install --set profile=demo -y
+```
+
 1. Spin up kind cluster
 
 ```
@@ -20,10 +27,11 @@ kubectl create -f namespaces/argo.yaml -f namespaces/edge.yaml -f namespaces/pro
 kubectl apply -f ingress/deploy.yaml
 ```
 
-And then the routes:
+And then the routes and default gateway:
 
 ```
-kubectl apply -f ingress edge-routes.yaml -f prod-routes.yml
+kubectl apply -f ingress istio-routes.yaml
+kubectl apply -f istio default-gateway.yaml
 ```
 
 4. Create secrets
@@ -48,7 +56,7 @@ kubectl apply -k argo
 6. Create and sync applications
 
 ```
-kustomize build applications/kustmization.yaml | kubectl apply -f -
+kustomize build applications/services | kubectl apply -f -
 ```
 
 TODO: Why doesn't `kubectl apply -k` work in this case?
