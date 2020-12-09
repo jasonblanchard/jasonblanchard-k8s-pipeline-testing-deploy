@@ -2,9 +2,9 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: edge
 bases:
-- https://github.com/jasonblanchard/k8s-pipeline-testing-authz/deploy/edge?ref=d64bc0e90fe41e994c1abaa239180a4450ca930c # {"$openapi":"base"}
+- https://github.com/jasonblanchard/k8s-pipeline-testing-authz/deploy/edge?ref=537c959352c33ba41ee3ca1f724e76124838c128 # {"$openapi":"base"}
 images:
 - name: jasonblanchard/k8s-pipeline-authz
-  newTag: "d64bc0e90fe41e994c1abaa239180a4450ca930c" # {"$openapi":"version"}
+  newTag: "537c959352c33ba41ee3ca1f724e76124838c128" # {"$openapi":"version"}
 commonAnnotations:
-  version: "d64bc0e90fe41e994c1abaa239180a4450ca930c" # {"$openapi":"version"}
+  version: "537c959352c33ba41ee3ca1f724e76124838c128" # {"$openapi":"version"}
