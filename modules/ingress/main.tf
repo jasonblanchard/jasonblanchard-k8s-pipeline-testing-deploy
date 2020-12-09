@@ -1,3 +1,13 @@
+resource "kubernetes_namespace" "ingress-nginx" {
+  metadata {
+    name = "ingress-nginx"
+    labels = {
+      "app.kubernetes.io/name" = "ingress-nginx"
+      "app.kubernetes.io/instance" = "ingress-nginx"
+    }
+  }
+}
+
 data "kustomization" "ingress-nginx" {
   path = "${path.module}/kustomize/ingress-nginx"
 }
@@ -5,6 +15,8 @@ data "kustomization" "ingress-nginx" {
 resource "kustomization_resource" "ingress-nginx" {
   for_each = data.kustomization.ingress-nginx.ids
   manifest = data.kustomization.ingress-nginx.manifests[each.value]
+
+  depends_on = [kubernetes_namespace.ingress-nginx]
 }
 
 data "kustomization" "istio-ingress" {
