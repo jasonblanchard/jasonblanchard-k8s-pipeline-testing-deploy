@@ -1,0 +1,9 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: notebook
+spec:
+  source:
+    path: services/notebook/edge
+  destination:
+    namespace: edge

@@ -25,8 +25,8 @@ cd cluster/ && terraform apply
 
 ```
 cd secrets
-echo -c "<github username>" >> username
-echo -c "<github token>" >> token
+echo -n "<github username>" >> username
+echo -n "<github token>" >> token
 ```
 
 Generate the k8s secret

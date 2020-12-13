@@ -5,7 +5,18 @@ metadata:
   namespace: istio-system
 spec:
   rules:
-  - http:
+  - host: "edge.lvh.me"
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: istio-ingressgateway
+            port:
+              number: 80
+  - host: "production.lvh.me"
+    http:
       paths:
       - path: /
         pathType: Prefix
